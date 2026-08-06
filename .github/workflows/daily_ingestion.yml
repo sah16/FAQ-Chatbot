@@ -10,6 +10,8 @@ jobs:
   run-daily-ingestion:
     name: Ingest & Refresh 5 Groww Scheme Pages
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
