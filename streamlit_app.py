@@ -11,8 +11,11 @@ import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
 
-if "GROQ_API_KEY" in st.secrets:
-    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+try:
+    if "GROQ_API_KEY" in st.secrets:
+        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+except Exception:
+    pass
 
 # Core RAG Modules
 from ingestion.pipeline import IngestionPipeline
@@ -128,8 +131,8 @@ def get_pipelines():
     return ingestion, retrieval, taxonomy, guardrail, formatter, generation, logger
 
 
-ingestion, retrieval, taxonomy, guardrail, formatter, generation, audit_logger = get_pipelines()
-sources = ingestion.get_sources()
+ingestion_pipeline, retrieval_pipeline, taxonomy_manager, guardrail_classifier, answer_formatter, generation_pipeline, audit_logger = get_pipelines()
+sources = ingestion_pipeline.get_sources()
 
 # Sidebar: Scheme Navigator & Question Guide
 with st.sidebar:
@@ -158,7 +161,7 @@ with st.sidebar:
     
     st.markdown(f"""
     <div class="disclaimer-card">
-        ⚖️ <b>Disclaimer:</b> {taxonomy.disclaimer}
+        ⚖️ <b>Disclaimer:</b> {taxonomy_manager.disclaimer}
     </div>
     """, unsafe_allow_html=True)
 
@@ -276,7 +279,7 @@ if prompt:
                     retrieved_chunk_ids=[c.chunk_id for c in retrieval_res["chunks"]],
                     response_text=response_text,
                     citation_url=citation_url,
-                    educational_url=taxonomy.educational_url,
+                    educational_url=taxonomy_manager.educational_url,
                     formatter_passed=gen_res.is_compliant,
                     latency_ms=latency_ms
                 )
