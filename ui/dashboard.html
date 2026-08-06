@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Observability & Analytics Dashboard — Groww FAQ Chatbot</title>
+  
+  <!-- Fonts: Inter, IBM Plex Mono & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dark-theme">
+
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation Header -->
+    <header class="dash-header">
+      <div class="header-left">
+        <div class="brand-badge">
+          <div class="groww-logo-icon">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+          </div>
+          <div class="brand-info">
+            <h1 class="brand-name">Pilot Observability Dashboard</h1>
+            <span class="brand-sub">Groww FAQ Chatbot • 5 Scheme RAG Metrics</span>
+          </div>
+        </div>
+        <span class="pilot-status-badge" id="pilotStatusBadge">
+          <span class="pulse-indicator"></span>
+          <span id="pilotStatusText">Evaluating Pilot Status...</span>
+        </span>
+      </div>
+
+      <div class="header-right">
+        <button class="action-btn sync-btn" id="triggerSyncBtn">
+          <span class="material-symbols-outlined">sync</span>
+          <span>Trigger Freshness Sync</span>
+        </button>
+        <a href="/" class="action-btn chat-link-btn">
+          <span class="material-symbols-outlined">chat</span>
+          <span>Open Chatbot</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="dash-content">
+      
+      <!-- Sync Notification Banner -->
+      <div class="sync-banner" id="syncBanner" style="display: none;">
+        <div class="sync-banner-content">
+          <span class="material-symbols-outlined text-blue">check_circle</span>
+          <span id="syncBannerText">Freshness re-indexing completed successfully.</span>
+        </div>
+        <button class="banner-close" id="syncBannerClose"><span class="material-symbols-outlined">close</span></button>
+      </div>
+
+      <!-- KPI Stat Cards Grid -->
+      <section class="kpi-grid">
+        
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">Total Queries Logged</span>
+            <span class="material-symbols-outlined kpi-icon">query_stats</span>
+          </div>
+          <div class="kpi-value" id="kpiTotalQueries">0</div>
+          <div class="kpi-sub" id="kpiQueryBreakdown">0 Factual • 0 Refusals</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">Citation Coverage</span>
+            <span class="material-symbols-outlined kpi-icon">link</span>
+          </div>
+          <div class="kpi-value text-emerald" id="kpiCitationRate">100%</div>
+          <div class="kpi-sub">Target: 100% (Approved 5 URLs)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">Sentence Limit Compliance</span>
+            <span class="material-symbols-outlined kpi-icon">verified</span>
+          </div>
+          <div class="kpi-value text-emerald" id="kpiSentenceRate">100%</div>
+          <div class="kpi-sub">Target: &ge;95% (&le;3 sentences)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">Avg Query Latency</span>
+            <span class="material-symbols-outlined kpi-icon">speed</span>
+          </div>
+          <div class="kpi-value text-blue" id="kpiAvgLatency">0 ms</div>
+          <div class="kpi-sub" id="kpiLatencyP95">p95: 0 ms • SLA: &lt;4,000 ms</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">PII Scrubbed Interceptions</span>
+            <span class="material-symbols-outlined kpi-icon">lock</span>
+          </div>
+          <div class="kpi-value text-amber" id="kpiPiiCount">0</div>
+          <div class="kpi-sub">0 PII leaked into logs</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-title">Corpus Freshness Health</span>
+            <span class="material-symbols-outlined kpi-icon">schedule</span>
+          </div>
+          <div class="kpi-value text-emerald" id="kpiFreshnessHealth">5/5 Fresh</div>
+          <div class="kpi-sub">SLA: &le;30 days staleness</div>
+        </div>
+
+      </section>
+
+      <!-- Middle Split: Scheme Freshness Table & Refusal Taxonomy Breakdown -->
+      <div class="dash-row">
+        
+        <!-- Scheme Freshness Table -->
+        <div class="dash-panel flex-3">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <span class="material-symbols-outlined text-blue">layers</span>
+              <h2>Fixed Corpus Freshness & Verification Status</h2>
+            </div>
+            <span class="badge-blue">5 Fixed Sources</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Scheme Name</th>
+                  <th>Chunks</th>
+                  <th>Fetched Date</th>
+                  <th>Last Verified</th>
+                  <th>Age</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="freshnessTableBody">
+                <tr><td colspan="6" class="loading-td">Loading corpus freshness data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Refusal Breakdown Card -->
+        <div class="dash-panel flex-2">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <span class="material-symbols-outlined text-amber">shield</span>
+              <h2>Refusal Policy Breakdown</h2>
+            </div>
+            <span class="badge-amber" id="overallRefusalRate">0% Refusal Rate</span>
+          </div>
+
+          <div class="refusal-stats-list" id="refusalStatsList">
+            <div class="refusal-stat-item">
+              <div class="refusal-stat-left">
+                <span class="refusal-label">Advisory Intent</span>
+                <span class="refusal-desc">"Should I buy/invest?"</span>
+              </div>
+              <span class="refusal-stat-count" id="countAdvisory">0</span>
+            </div>
+
+            <div class="refusal-stat-item">
+              <div class="refusal-stat-left">
+                <span class="refusal-label">Comparative Intent</span>
+                <span class="refusal-desc">"Which fund is better?"</span>
+              </div>
+              <span class="refusal-stat-count" id="countComparative">0</span>
+            </div>
+
+            <div class="refusal-stat-item">
+              <div class="refusal-stat-left">
+                <span class="refusal-label">Performance Prediction</span>
+                <span class="refusal-desc">"What return will I get?"</span>
+              </div>
+              <span class="refusal-stat-count" id="countPrediction">0</span>
+            </div>
+
+            <div class="refusal-stat-item">
+              <div class="refusal-stat-left">
+                <span class="refusal-label">Out of Corpus</span>
+                <span class="refusal-desc">Non-covered AMC/Crypto</span>
+              </div>
+              <span class="refusal-stat-count" id="countOutOfCorpus">0</span>
+            </div>
+
+            <div class="refusal-stat-item">
+              <div class="refusal-stat-left">
+                <span class="refusal-label">Mixed Intent</span>
+                <span class="refusal-desc">Fact answered + refusal note</span>
+              </div>
+              <span class="refusal-stat-count" id="countMixed">0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Real-Time Audit Log Feed -->
+      <section class="dash-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <span class="material-symbols-outlined text-blue">receipt_long</span>
+            <h2>Zero-PII Structured Audit Log Feed</h2>
+          </div>
+          <button class="refresh-logs-btn" id="refreshLogsBtn">
+            <span class="material-symbols-outlined">refresh</span>
+            <span>Refresh Feed</span>
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table audit-table">
+            <thead>
+              <tr>
+                <th>Timestamp (UTC)</th>
+                <th>Sanitized Query (Zero PII)</th>
+                <th>Intent</th>
+                <th>Status</th>
+                <th>Citation / Educational URL</th>
+                <th>Compliance</th>
+                <th>Latency</th>
+              </tr>
+            </thead>
+            <tbody id="auditTableBody">
+              <tr><td colspan="7" class="loading-td">Loading audit log transactions...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

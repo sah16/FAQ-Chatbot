@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Librarian Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@450&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary-fixed": "#291800",
+                  "on-surface-variant": "#404849",
+                  "on-tertiary-fixed": "#3c0800",
+                  "error-container": "#ffdad6",
+                  "surface-container-highest": "#d8e4ea",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-container-high": "#deeaef",
+                  "surface-container": "#e4f0f5",
+                  "primary": "#003739",
+                  "on-background": "#121d21",
+                  "surface-variant": "#d8e4ea",
+                  "secondary-fixed-dim": "#fdba55",
+                  "primary-fixed-dim": "#97d1d4",
+                  "surface-tint": "#2c676a",
+                  "secondary": "#815500",
+                  "on-secondary": "#ffffff",
+                  "surface": "#f2fbff",
+                  "tertiary": "#5e1705",
+                  "primary-fixed": "#b2edf0",
+                  "tertiary-container": "#7d2d19",
+                  "on-tertiary-fixed-variant": "#7c2d18",
+                  "on-secondary-container": "#724a00",
+                  "on-primary-container": "#86bfc2",
+                  "on-error": "#ffffff",
+                  "tertiary-fixed-dim": "#ffb4a2",
+                  "on-surface": "#121d21",
+                  "outline": "#707979",
+                  "on-primary-fixed-variant": "#0b4f52",
+                  "secondary-container": "#fdba55",
+                  "primary-container": "#0b4f52",
+                  "on-secondary-fixed-variant": "#624000",
+                  "secondary-fixed": "#ffddb2",
+                  "inverse-primary": "#97d1d4",
+                  "outline-variant": "#bfc8c8",
+                  "surface-bright": "#f2fbff",
+                  "on-tertiary": "#ffffff",
+                  "surface-dim": "#d0dce1",
+                  "surface-container-low": "#eaf6fb",
+                  "background": "#f2fbff",
+                  "inverse-surface": "#273236",
+                  "inverse-on-surface": "#e7f3f8",
+                  "tertiary-fixed": "#ffdad2",
+                  "on-primary": "#ffffff",
+                  "on-primary-fixed": "#002021",
+                  "error": "#ba1a1a",
+                  "on-tertiary-container": "#ff9c82",
+                  "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "20px",
+                  "lg": "24px",
+                  "md": "16px",
+                  "container-max": "800px",
+                  "xs": "4px",
+                  "xl": "40px",
+                  "sm": "8px",
+                  "unit": "4px"
+          },
+          "fontFamily": {
+                  "headline-md": [
+                          "Inter"
+                  ],
+                  "body-lg": [
+                          "Inter"
+                  ],
+                  "data-mono": [
+                          "IBM Plex Mono"
+                  ],
+                  "body-md": [
+                          "Inter"
+                  ],
+                  "label-sm": [
+                          "Inter"
+                  ],
+                  "headline-sm": [
+                          "Inter"
+                  ],
+                  "headline-lg": [
+                          "Inter"
+                  ]
+          },
+          "fontSize": {
+                  "headline-md": [
+                          "24px",
+                          {
+                                  "lineHeight": "1.3",
+                                  "letterSpacing": "-0.01em",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "body-lg": [
+                          "16px",
+                          {
+                                  "lineHeight": "1.6",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "data-mono": [
+                          "13px",
+                          {
+                                  "lineHeight": "1.5",
+                                  "fontWeight": "450"
+                          }
+                  ],
+                  "body-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "1.5",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "label-sm": [
+                          "12px",
+                          {
+                                  "lineHeight": "1.2",
+                                  "letterSpacing": "0.02em",
+                                  "fontWeight": "500"
+                          }
+                  ],
+                  "headline-sm": [
+                          "18px",
+                          {
+                                  "lineHeight": "1.4",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "headline-lg": [
+                          "32px",
+                          {
+                                  "lineHeight": "1.2",
+                                  "letterSpacing": "-0.02em",
+                                  "fontWeight": "600"
+                          }
+                  ]
+          }
+      },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F7F8F7;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-on-surface-variant docked full-width top-0">
+<div class="flex justify-between items-center w-full px-md md:px-lg max-w-container-max mx-auto h-16">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed-dim">
+        Librarian Assistant
+      </div>
+<div class="flex items-center gap-4 hidden md:flex">
+<!-- Main Nav omitted as per prompt for "minimal nav", but keeping structural hooks if needed -->
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center px-md py-xl md:py-20 max-w-container-max mx-auto w-full">
+<div class="text-center mb-12 w-full">
+<h1 class="text-headline-lg font-headline-lg text-on-background mb-4">
+        Ask about your mutual fund scheme
+      </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+        Answers are sourced only from official scheme pages
+      </p>
+</div>
+<!-- Question Chips -->
+<div class="flex flex-col gap-4 w-full max-w-[600px] mb-16">
+<button class="w-full text-left bg-surface-container-lowest border border-outline-variant rounded-full px-6 py-3 text-body-md font-body-md font-medium text-on-surface hover:shadow-sm hover:border-primary-container transition-all group flex items-center justify-between">
+<span>What's the exit load on HDFC Mid-Cap Fund?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full text-left bg-surface-container-lowest border border-outline-variant rounded-full px-6 py-3 text-body-md font-body-md font-medium text-on-surface hover:shadow-sm hover:border-primary-container transition-all group flex items-center justify-between">
+<span>What's the minimum SIP for HDFC Nifty 50 Index Fund?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full text-left bg-surface-container-lowest border border-outline-variant rounded-full px-6 py-3 text-body-md font-body-md font-medium text-on-surface hover:shadow-sm hover:border-primary-container transition-all group flex items-center justify-between">
+<span>What's the riskometer rating for HDFC Balanced Advantage Fund?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Chat Input Area -->
+<div class="w-full max-w-[720px] mt-auto md:mt-0 relative">
+<div class="relative bg-surface-container-lowest rounded-lg border border-outline-variant focus-within:border-primary-container focus-within:ring-1 focus-within:ring-primary-container transition-all shadow-sm">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none py-4 pl-4 pr-12 text-body-lg font-body-lg text-on-surface placeholder:text-outline-variant h-16 min-h-[64px]" placeholder="Ask a question..." rows="1"></textarea>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary-container text-on-primary rounded-full p-2 hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-4 px-md flex flex-col items-center gap-2 full-width bg-surface-container-low dark:bg-surface-container border-t border-outline-variant dark:border-on-surface-variant mt-auto hidden md:flex">
+<div class="font-bold text-primary text-label-sm font-label-sm mb-2">Facts-only. No investment advice.</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Data Sources</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-on-surface-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-semibold scale-95 transition-transform text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+      Research
+    </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+      Glossary
+    </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bookmark">bookmark</span>
+      Saved
+    </a>
+</nav>
+</body></html>

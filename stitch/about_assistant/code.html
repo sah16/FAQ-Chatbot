@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How this assistant works - Librarian Assistant</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#291800",
+                    "on-surface-variant": "#404849",
+                    "on-tertiary-fixed": "#3c0800",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d8e4ea",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#deeaef",
+                    "surface-container": "#e4f0f5",
+                    "primary": "#003739",
+                    "on-background": "#121d21",
+                    "surface-variant": "#d8e4ea",
+                    "secondary-fixed-dim": "#fdba55",
+                    "primary-fixed-dim": "#97d1d4",
+                    "surface-tint": "#2c676a",
+                    "secondary": "#815500",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f2fbff",
+                    "tertiary": "#5e1705",
+                    "primary-fixed": "#b2edf0",
+                    "tertiary-container": "#7d2d19",
+                    "on-tertiary-fixed-variant": "#7c2d18",
+                    "on-secondary-container": "#724a00",
+                    "on-primary-container": "#86bfc2",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb4a2",
+                    "on-surface": "#121d21",
+                    "outline": "#707979",
+                    "on-primary-fixed-variant": "#0b4f52",
+                    "secondary-container": "#fdba55",
+                    "primary-container": "#0b4f52",
+                    "on-secondary-fixed-variant": "#624000",
+                    "secondary-fixed": "#ffddb2",
+                    "inverse-primary": "#97d1d4",
+                    "outline-variant": "#bfc8c8",
+                    "surface-bright": "#f2fbff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d0dce1",
+                    "surface-container-low": "#eaf6fb",
+                    "background": "#f2fbff",
+                    "inverse-surface": "#273236",
+                    "inverse-on-surface": "#e7f3f8",
+                    "tertiary-fixed": "#ffdad2",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#002021",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#ff9c82",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "20px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "container-max": "800px",
+                    "xs": "4px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "data-mono": ["IBM Plex Mono", "monospace"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "headline-sm": ["Inter", "sans-serif"],
+                    "headline-lg": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "data-mono": ["13px", {"lineHeight": "1.5", "fontWeight": "450"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@450&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #F7F8F7; /* Closest to theme's bg-background / surface */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b border-outline-variant dark:border-on-surface-variant flex justify-between items-center w-full px-md md:px-lg max-w-container-max mx-auto h-16 sticky z-40">
+<div class="flex items-center gap-sm">
+<a class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors p-2 rounded-full flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</a>
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Librarian Assistant</span>
+</div>
+<div class="flex items-center gap-sm">
+<button aria-label="history" class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button aria-label="settings" class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[720px] mx-auto px-md md:px-lg py-xl">
+<div class="mb-12">
+<h1 class="text-headline-md font-headline-md text-on-surface mb-2">How this assistant works</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">A transparent guide to how data is sourced, processed, and presented.</p>
+</div>
+<!-- Section 1: Facts Only -->
+<section class="mb-10 flex gap-md md:gap-lg items-start border border-outline-variant bg-surface-container-lowest rounded-xl p-md md:p-lg hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="shield">shield</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-xs">Facts only</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">
+                    This system operates strictly as a reference librarian. It retrieves, extracts, and summarizes structured financial data without interpretation or bias.
+                </p>
+<div class="bg-surface-container p-sm rounded border border-outline-variant inline-block">
+<p class="text-label-sm font-label-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+                        Strictly informational. No investment advice is provided.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 2: Sourced Answers -->
+<section class="mb-10 flex gap-md md:gap-lg items-start border border-outline-variant bg-surface-container-lowest rounded-xl p-md md:p-lg hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="link">link</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-xs">Sourced answers</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">
+                    Every data point presented is tethered to its original document. We prioritize links to official Scheme Information Documents (SIDs) and official fund house pages.
+                </p>
+<div class="border border-outline-variant rounded-lg p-md bg-surface-container-low flex flex-col gap-sm">
+<span class="text-label-sm font-label-sm text-outline">Example Citation</span>
+<p class="text-body-md font-body-md text-on-surface flex items-center gap-xs flex-wrap">
+                        The current expense ratio is 0.85% 
+                        <span class="inline-flex items-center gap-xs px-2 py-[2px] bg-secondary-fixed text-on-secondary-fixed-variant border border-[#E1E6E5] rounded cursor-pointer hover:bg-secondary-fixed-dim transition-colors">
+<span class="text-data-mono font-data-mono text-secondary">Source: HDFC SID, Pg 12</span>
+</span>
+</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Limited Coverage -->
+<section class="mb-10 flex gap-md md:gap-lg items-start border border-outline-variant bg-surface-container-lowest rounded-xl p-md md:p-lg hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="info">info</span>
+</div>
+<div class="w-full">
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-xs">Limited coverage</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">
+                    Currently, this index is restricted to a specific set of mutual funds to ensure high-fidelity extraction and verification.
+                </p>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-container-low px-md py-sm border-b border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold">Currently Indexed Schemes</span>
+</div>
+<ul class="divide-y divide-outline-variant bg-surface-container-lowest">
+<li class="px-md py-3 text-body-md font-body-md text-on-surface flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+                            HDFC Flexi Cap Fund
+                        </li>
+<li class="px-md py-3 text-body-md font-body-md text-on-surface flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+                            HDFC Top 100 Fund
+                        </li>
+<li class="px-md py-3 text-body-md font-body-md text-on-surface flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+                            HDFC Mid-Cap Opportunities Fund
+                        </li>
+<li class="px-md py-3 text-body-md font-body-md text-on-surface flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+                            HDFC Small Cap Fund
+                        </li>
+<li class="px-md py-3 text-body-md font-body-md text-on-surface flex items-center gap-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+                            HDFC Balanced Advantage Fund
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container full-width mb-16 border-t border-outline-variant dark:border-on-surface-variant w-full py-4 px-md flex flex-col items-center gap-2 mt-auto">
+<span class="font-bold text-primary font-headline-sm text-label-sm">Librarian Assistant</span>
+<p class="text-on-surface-variant dark:text-on-surface-variant text-label-sm font-label-sm">
+            Facts-only. No investment advice.
+        </p>
+<div class="flex gap-4 mt-2">
+<a class="text-on-surface-variant dark:text-outline text-label-sm font-label-sm hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-outline text-label-sm font-label-sm hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-outline text-label-sm font-label-sm hover:text-primary transition-colors" href="#">Data Sources</a>
+</div>
+</footer>
+</body></html>

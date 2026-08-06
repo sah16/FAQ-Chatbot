@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "disclaimer": "Facts-only. No investment advice.",
+  "sources": [
+    {
+      "id": "hdfc-mid-cap-fund",
+      "name": "HDFC Mid-Cap Opportunities Fund",
+      "url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "category": "Equity - Mid Cap",
+      "plan": "Direct Plan - Growth",
+      "amc": "HDFC Mutual Fund"
+    },
+    {
+      "id": "hdfc-equity-fund",
+      "name": "HDFC Flexi Cap Fund (formerly HDFC Equity Fund)",
+      "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "category": "Equity - Flexi Cap",
+      "plan": "Direct Plan - Growth",
+      "amc": "HDFC Mutual Fund"
+    },
+    {
+      "id": "hdfc-small-cap-fund",
+      "name": "HDFC Small Cap Fund",
+      "url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "category": "Equity - Small Cap",
+      "plan": "Direct Plan - Growth",
+      "amc": "HDFC Mutual Fund"
+    },
+    {
+      "id": "hdfc-nifty-50-index-fund",
+      "name": "HDFC Nifty 50 Index Fund",
+      "url": "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth",
+      "category": "Index Fund",
+      "plan": "Direct Plan - Growth",
+      "amc": "HDFC Mutual Fund"
+    },
+    {
+      "id": "hdfc-balanced-advantage-fund",
+      "name": "HDFC Balanced Advantage Fund",
+      "url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+      "category": "Hybrid - Balanced Advantage",
+      "plan": "Direct Plan - Growth",
+      "amc": "HDFC Mutual Fund"
+    }
+  ]
+}

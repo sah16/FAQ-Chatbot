@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "disclaimer": "Facts-only. No investment advice.",
+  "educational_resource": {
+    "title": "AMFI Investor Education Resources",
+    "url": "https://www.amfiindia.com/investor-corner/investor-education",
+    "authority": "Association of Mutual Funds in India (AMFI) / SEBI"
+  },
+  "default_refusal_template": "I can only share verified facts from official sources — I'm not able to offer investment advice or compare funds. For general guidance on choosing mutual funds, see AMFI's investor education resources: {educational_url}",
+  "categories": [
+    {
+      "id": "advisory",
+      "name": "Investment Advice",
+      "description": "Requests asking whether to buy, sell, hold, invest, or allocate funds.",
+      "examples": [
+        "Should I invest in this fund?",
+        "Is HDFC Mid Cap good for long term investment?",
+        "When should I redeem my mutual fund units?"
+      ],
+      "refusal_message": "I can only share verified facts from official sources — I am not able to provide investment advice, buy/sell recommendations, or personal portfolio suggestions. For investor education, please visit AMFI: https://www.amfiindia.com/investor-corner/investor-education"
+    },
+    {
+      "id": "comparative",
+      "name": "Fund Comparison & Superiority",
+      "description": "Queries comparing two or more schemes, or asking which fund is 'better' or 'best'.",
+      "examples": [
+        "Which fund is better between HDFC Mid Cap and HDFC Small Cap?",
+        "What is the best mutual fund to invest in 2026?"
+      ],
+      "refusal_message": "I provide objective facts for individual schemes from official sources and cannot compare funds or recommend which fund is better. For guidance on evaluating mutual funds, visit AMFI: https://www.amfiindia.com/investor-corner/investor-education"
+    },
+    {
+      "id": "performance_prediction",
+      "name": "Performance Prediction & Speculation",
+      "description": "Queries asking for future return forecasts, CAGR estimations, or guarantees.",
+      "examples": [
+        "What returns will I get in 5 years?",
+        "Will this fund give 20% CAGR next year?",
+        "Calculate my future wealth if I do 5000 SIP"
+      ],
+      "refusal_message": "I do not calculate or predict future investment returns. Mutual fund investments are subject to market risks. You can view historical data directly on the official scheme page on Groww."
+    },
+    {
+      "id": "out_of_corpus",
+      "name": "Out of Scope / Unsupported Scheme",
+      "description": "Queries about schemes outside the 5 fixed HDFC Groww pages, non-mutual-fund financial products, or unrelated questions.",
+      "examples": [
+        "What is the expense ratio of SBI Bluechip Fund?",
+        "How do I file my ITR-2 taxes?",
+        "What is the price of Bitcoin today?"
+      ],
+      "refusal_message": "This query is outside my current verified coverage. My coverage is strictly limited to 5 official HDFC Mutual Fund scheme pages on Groww."
+    },
+    {
+      "id": "mixed_intent",
+      "name": "Mixed Factual and Advisory Intent",
+      "description": "Queries that contain both a factual question (e.g. exit load) and an advisory question (e.g. should I redeem).",
+      "examples": [
+        "What is the exit load on HDFC Mid-Cap Fund, and should I redeem now?",
+        "What is the expense ratio and is it worth investing?"
+      ],
+      "handling_rule": "Answer the factual portion strictly from verified retrieved chunks, and append the refusal template for the advisory portion."
+    }
+  ]
+}

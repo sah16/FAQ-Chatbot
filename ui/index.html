@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groww FAQ Chatbot — Mutual Fund Facts-Only Assistant</title>
+  
+  <!-- Fonts: Inter, IBM Plex Mono & Google Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+  <div class="app-layout">
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+        <div class="brand-badge">
+          <div class="groww-logo-icon">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+          </div>
+          <div class="brand-info">
+            <h2 class="brand-name">Groww FAQ Chatbot</h2>
+            <span class="brand-sub">Mutual Fund Facts Assistant</span>
+          </div>
+        </div>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close sidebar">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Schemes & Questions Section -->
+      <div class="sidebar-content">
+        <div class="section-title-group">
+          <span class="section-heading">Covered Schemes</span>
+          <span class="scheme-count-tag">5 Fixed Funds</span>
+        </div>
+        <p class="sidebar-helper-text">Select a scheme to explore supported factual questions:</p>
+
+        <div class="schemes-accordion" id="schemesAccordion">
+          
+          <!-- Scheme 1: Mid-Cap -->
+          <div class="scheme-item active" data-scheme="mid-cap">
+            <button class="scheme-toggle" aria-expanded="true">
+              <div class="scheme-toggle-left">
+                <span class="scheme-dot mid-cap-dot"></span>
+                <span class="scheme-title">HDFC Mid-Cap Opportunities</span>
+              </div>
+              <span class="material-symbols-outlined scheme-chevron">expand_more</span>
+            </button>
+            <div class="scheme-questions">
+              <button class="sidebar-q-btn" data-query="What is the expense ratio (TER) of HDFC Mid Cap Fund Direct Growth?">
+                <span class="material-symbols-outlined q-icon">percent</span>
+                <span>Expense Ratio (TER)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What's the exit load on HDFC Mid-Cap Fund?">
+                <span class="material-symbols-outlined q-icon">output</span>
+                <span>Exit Load Structure</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the minimum SIP amount for HDFC Mid Cap Fund?">
+                <span class="material-symbols-outlined q-icon">payments</span>
+                <span>Minimum SIP & Lumpsum</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the riskometer rating for HDFC Mid Cap Fund?">
+                <span class="material-symbols-outlined q-icon">speed</span>
+                <span>SEBI Riskometer</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="Who manages HDFC Mid Cap Fund?">
+                <span class="material-symbols-outlined q-icon">person</span>
+                <span>Fund Manager</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scheme 2: Flexi Cap -->
+          <div class="scheme-item" data-scheme="flexi-cap">
+            <button class="scheme-toggle" aria-expanded="false">
+              <div class="scheme-toggle-left">
+                <span class="scheme-dot flexi-cap-dot"></span>
+                <span class="scheme-title">HDFC Flexi Cap Fund</span>
+              </div>
+              <span class="material-symbols-outlined scheme-chevron">expand_more</span>
+            </button>
+            <div class="scheme-questions">
+              <button class="sidebar-q-btn" data-query="What benchmark does HDFC Flexi Cap Fund track?">
+                <span class="material-symbols-outlined q-icon">query_stats</span>
+                <span>Benchmark Index</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the expense ratio of HDFC Flexi Cap Direct Plan?">
+                <span class="material-symbols-outlined q-icon">percent</span>
+                <span>Expense Ratio (TER)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the minimum SIP for HDFC Flexi Cap?">
+                <span class="material-symbols-outlined q-icon">payments</span>
+                <span>Minimum SIP & Lumpsum</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the exit load for HDFC Flexi Cap Fund?">
+                <span class="material-symbols-outlined q-icon">output</span>
+                <span>Exit Load Rules</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="Who is the fund manager of HDFC Flexi Cap Fund?">
+                <span class="material-symbols-outlined q-icon">person</span>
+                <span>Fund Manager</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scheme 3: Small Cap -->
+          <div class="scheme-item" data-scheme="small-cap">
+            <button class="scheme-toggle" aria-expanded="false">
+              <div class="scheme-toggle-left">
+                <span class="scheme-dot small-cap-dot"></span>
+                <span class="scheme-title">HDFC Small Cap Fund</span>
+              </div>
+              <span class="material-symbols-outlined scheme-chevron">expand_more</span>
+            </button>
+            <div class="scheme-questions">
+              <button class="sidebar-q-btn" data-query="What is the exit load on HDFC Small Cap?">
+                <span class="material-symbols-outlined q-icon">output</span>
+                <span>Exit Load Period</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="Is there any lock-in period for HDFC Small Cap Fund?">
+                <span class="material-symbols-outlined q-icon">lock_open</span>
+                <span>Lock-in Period vs ELSS</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the expense ratio of HDFC Small Cap Fund?">
+                <span class="material-symbols-outlined q-icon">percent</span>
+                <span>Expense Ratio (TER)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the riskometer classification for HDFC Small Cap Fund?">
+                <span class="material-symbols-outlined q-icon">speed</span>
+                <span>SEBI Riskometer</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the minimum SIP for HDFC Small Cap Fund?">
+                <span class="material-symbols-outlined q-icon">payments</span>
+                <span>Minimum Investment</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scheme 4: Nifty 50 Index -->
+          <div class="scheme-item" data-scheme="nifty-50">
+            <button class="scheme-toggle" aria-expanded="false">
+              <div class="scheme-toggle-left">
+                <span class="scheme-dot nifty-dot"></span>
+                <span class="scheme-title">HDFC NIFTY 50 Index Fund</span>
+              </div>
+              <span class="material-symbols-outlined scheme-chevron">expand_more</span>
+            </button>
+            <div class="scheme-questions">
+              <button class="sidebar-q-btn" data-query="What's the minimum SIP for HDFC Nifty 50 Index Fund?">
+                <span class="material-symbols-outlined q-icon">payments</span>
+                <span>Minimum SIP (₹100)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="Does HDFC Nifty 50 Index Fund have an exit load?">
+                <span class="material-symbols-outlined q-icon">output</span>
+                <span>Exit Load (Nil / Zero)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the benchmark of HDFC Nifty 50 Index Fund?">
+                <span class="material-symbols-outlined q-icon">query_stats</span>
+                <span>Underlying Benchmark</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the expense ratio of HDFC Nifty 50 Index Fund Direct Growth?">
+                <span class="material-symbols-outlined q-icon">percent</span>
+                <span>Expense Ratio (TER)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scheme 5: Balanced Advantage -->
+          <div class="scheme-item" data-scheme="balanced-adv">
+            <button class="scheme-toggle" aria-expanded="false">
+              <div class="scheme-toggle-left">
+                <span class="scheme-dot baf-dot"></span>
+                <span class="scheme-title">HDFC Balanced Advantage Fund</span>
+              </div>
+              <span class="material-symbols-outlined scheme-chevron">expand_more</span>
+            </button>
+            <div class="scheme-questions">
+              <button class="sidebar-q-btn" data-query="What's the riskometer rating for HDFC Balanced Advantage Fund?">
+                <span class="material-symbols-outlined q-icon">speed</span>
+                <span>Riskometer Rating</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the expense ratio of HDFC Balanced Advantage Fund?">
+                <span class="material-symbols-outlined q-icon">percent</span>
+                <span>Expense Ratio (TER)</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="What is the exit load structure for HDFC Balanced Advantage Fund?">
+                <span class="material-symbols-outlined q-icon">output</span>
+                <span>Exit Load Tier</span>
+              </button>
+              <button class="sidebar-q-btn" data-query="How do I download account statements for HDFC Balanced Advantage Fund on Groww?">
+                <span class="material-symbols-outlined q-icon">download</span>
+                <span>Statement Download Process</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <button class="sidebar-info-btn" id="aboutBtn">
+          <span class="material-symbols-outlined">info</span>
+          <span>How this chatbot works</span>
+        </button>
+        <div class="sidebar-disclaimer-tag">
+          <span class="material-symbols-outlined text-[14px]">shield</span>
+          <span>SEBI & AMFI Compliant • Facts Only</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main Chat Canvas -->
+    <div class="main-canvas">
+      
+      <!-- Top Header Bar -->
+      <header class="top-nav">
+        <div class="nav-left">
+          <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle sidebar menu">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div class="nav-brand-title">
+            <h1>Groww FAQ Chatbot</h1>
+            <span class="nav-status-pill">
+              <span class="pulse-indicator"></span>
+              <span>5 Schemes Live</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <a href="/dashboard" class="nav-action-btn" title="Open Pilot Observability Dashboard" style="text-decoration: none;">
+            <span class="material-symbols-outlined">insights</span>
+            <span class="btn-text">Dashboard</span>
+          </a>
+          <button class="nav-action-btn" id="clearChatBtn" title="Clear chat history">
+            <span class="material-symbols-outlined">refresh</span>
+            <span class="btn-text">New Chat</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Chat Workspace -->
+      <main class="chat-workspace">
+        <div class="chat-container">
+          
+          <div class="messages-list" id="messagesList">
+            
+            <!-- Welcome Hero Screen -->
+            <div class="welcome-screen" id="welcomeScreen">
+              <div class="welcome-badge">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>Official Groww Mutual Fund Documentation</span>
+              </div>
+
+              <h2 class="welcome-heading">Ask factual questions about mutual funds</h2>
+              <p class="welcome-subheading">
+                Instant, verified facts sourced directly from official Groww scheme pages for 5 HDFC schemes. Select a question below or pick from the sidebar.
+              </p>
+
+              <!-- Quick Starter Chips -->
+              <div class="chips-container">
+                <div class="chips-label">Popular Factual Questions:</div>
+                <div class="chips-grid">
+                  <button class="question-chip" data-query="What's the exit load on HDFC Mid-Cap Fund?">
+                    <div class="chip-content">
+                      <span class="chip-scheme-tag mid-cap-tag">Mid-Cap</span>
+                      <span class="chip-text">What's the exit load on HDFC Mid-Cap Fund?</span>
+                    </div>
+                    <span class="material-symbols-outlined chip-arrow">arrow_forward</span>
+                  </button>
+
+                  <button class="question-chip" data-query="What's the minimum SIP for HDFC Nifty 50 Index Fund?">
+                    <div class="chip-content">
+                      <span class="chip-scheme-tag nifty-tag">Nifty 50</span>
+                      <span class="chip-text">What's the minimum SIP for HDFC Nifty 50 Index Fund?</span>
+                    </div>
+                    <span class="material-symbols-outlined chip-arrow">arrow_forward</span>
+                  </button>
+
+                  <button class="question-chip" data-query="What's the riskometer rating for HDFC Balanced Advantage Fund?">
+                    <div class="chip-content">
+                      <span class="chip-scheme-tag baf-tag">Balanced Adv</span>
+                      <span class="chip-text">What's the riskometer rating for HDFC Balanced Advantage Fund?</span>
+                    </div>
+                    <span class="material-symbols-outlined chip-arrow">arrow_forward</span>
+                  </button>
+
+                  <button class="question-chip" data-query="What is the expense ratio of HDFC Small Cap Fund?">
+                    <div class="chip-content">
+                      <span class="chip-scheme-tag small-cap-tag">Small Cap</span>
+                      <span class="chip-text">What is the expense ratio of HDFC Small Cap Fund?</span>
+                    </div>
+                    <span class="material-symbols-outlined chip-arrow">arrow_forward</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Docked Bottom Input Area -->
+      <div class="docked-input-wrapper">
+        <div class="input-container">
+          <form class="input-form" id="chatForm">
+            <div class="input-box-wrapper">
+              <input 
+                type="text" 
+                id="queryInput" 
+                class="chat-input" 
+                placeholder="Ask about expense ratio, exit load, minimum SIP, riskometer, benchmark..." 
+                autocomplete="off"
+                required
+              />
+              <button type="submit" id="sendBtn" class="send-btn" aria-label="Send message">
+                <span class="material-symbols-outlined">arrow_upward</span>
+              </button>
+            </div>
+          </form>
+          
+          <!-- Persistent Disclaimer Footer -->
+          <div class="input-disclaimer">
+            <span class="material-symbols-outlined disclaimer-icon">shield</span>
+            <span>Facts-only. No investment advice. Answers sourced only from official Groww scheme documentation.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- About Modal Dialog -->
+  <div class="modal-backdrop" id="aboutModal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="material-symbols-outlined text-blue">info</span>
+          <h3>About Groww FAQ Chatbot</h3>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close dialog">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <section class="modal-section">
+          <h4>Verified 5-Scheme Corpus</h4>
+          <p>This chatbot strictly answers questions from 5 official Groww HTML scheme pages with zero external crawling or PDF ingestion:</p>
+          <ul class="modal-list">
+            <li><a href="https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth" target="_blank" rel="noopener noreferrer">HDFC Mid-Cap Opportunities Direct Plan ↗</a></li>
+            <li><a href="https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth" target="_blank" rel="noopener noreferrer">HDFC Flexi Cap Direct Plan ↗</a></li>
+            <li><a href="https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth" target="_blank" rel="noopener noreferrer">HDFC Small Cap Direct Plan ↗</a></li>
+            <li><a href="https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth" target="_blank" rel="noopener noreferrer">HDFC Nifty 50 Index Direct Plan ↗</a></li>
+            <li><a href="https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth" target="_blank" rel="noopener noreferrer">HDFC Balanced Advantage Direct Plan ↗</a></li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Pre-Retrieval Guardrails & Refusal Gate</h4>
+          <p>The chatbot enforces regulatory compliance by immediately refusing:</p>
+          <ul class="modal-list">
+            <li><strong>Investment Advice:</strong> "Should I buy / sell / redeem?"</li>
+            <li><strong>Scheme Comparisons:</strong> "Which fund gives higher return?"</li>
+            <li><strong>Return Forecasts:</strong> "How much money will I make?"</li>
+            <li><strong>Out-of-Corpus AMCs:</strong> Non-covered schemes, crypto, tax filing.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Privacy First</h4>
+          <p>Personal financial identifiers (PAN, Aadhaar, mobile numbers, bank accounts) are automatically scrubbed prior to retrieval and never saved in logs.</p>
+        </section>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://www.amfiindia.com/investor-corner/knowledge-center/what-are-mutual-funds.html" target="_blank" rel="noopener noreferrer" class="amfi-link-btn">
+          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          <span>AMFI Official Investor Education Resource</span>
+        </a>
+        <button class="modal-done-btn" id="modalDoneBtn">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+/* ==========================================================================
+   Pilot Observability & Analytics Dashboard CSS — Dark & Blue System
+   ========================================================================== */
+
+:root {
+  --bg-base: #0b0f19;
+  --bg-surface: #111827;
+  --bg-card: #1e293b;
+  --bg-hover: #273549;
+  --bg-table-zebra: #131d2e;
+  
+  --primary-blue: #3b82f6;
+  --primary-blue-hover: #2563eb;
+  --primary-blue-light: #60a5fa;
+  --blue-glow: rgba(59, 130, 246, 0.25);
+  --blue-subtle: rgba(59, 130, 246, 0.12);
+  --blue-border: rgba(59, 130, 246, 0.35);
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-on-blue: #ffffff;
+  
+  --border-subtle: #1e293b;
+  --border-medium: #334155;
+  --border-light: #475569;
+  
+  --emerald: #10b981;
+  --emerald-subtle: rgba(16, 185, 129, 0.12);
+  --emerald-border: rgba(16, 185, 129, 0.3);
+  
+  --amber: #f59e0b;
+  --amber-subtle: rgba(245, 158, 11, 0.12);
+  --amber-border: rgba(245, 158, 11, 0.3);
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-theme {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Dashboard Layout
+   ========================================================================== */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.dash-header {
+  height: 70px;
+  background-color: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.groww-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: var(--text-on-blue);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  display: block;
+}
+
+.pilot-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--emerald-subtle);
+  border: 1px solid var(--emerald-border);
+  color: #34d399;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--emerald);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sync-btn {
+  background: var(--blue-subtle);
+  border: 1px solid var(--blue-border);
+  color: var(--primary-blue-light);
+}
+
+.sync-btn:hover {
+  background: var(--primary-blue);
+  color: var(--text-on-blue);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.chat-link-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  color: var(--text-main);
+}
+
+.chat-link-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue-light);
+}
+
+/* ==========================================================================
+   Dashboard Content
+   ========================================================================== */
+.dash-content {
+  flex: 1;
+  padding: 28px 32px 60px 32px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Notification Banner */
+.sync-banner {
+  background: #111a2e;
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.3s ease;
+}
+
+.sync-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.banner-close {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+/* KPI Stat Cards Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.kpi-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpi-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpi-icon {
+  font-size: 20px;
+  color: var(--text-dim);
+}
+
+.kpi-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.kpi-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.text-blue { color: var(--primary-blue-light) !important; }
+.text-emerald { color: #34d399 !important; }
+.text-amber { color: #fbbf24 !important; }
+
+/* Dashboard Rows & Panels */
+.dash-row {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-3 { flex: 3; }
+.flex-2 { flex: 2; }
+
+.dash-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-title-group h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.badge-blue {
+  background: var(--blue-subtle);
+  border: 1px solid var(--blue-border);
+  color: var(--primary-blue-light);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.badge-amber {
+  background: var(--amber-subtle);
+  border: 1px solid var(--amber-border);
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.refresh-logs-btn {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-logs-btn:hover {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+/* Data Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.data-table th {
+  padding: 10px 14px;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.data-table td {
+  padding: 12px 14px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.data-table tr:hover td {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.loading-td {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 24px !important;
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-fresh {
+  background: var(--emerald-subtle);
+  border: 1px solid var(--emerald-border);
+  color: #34d399;
+}
+
+.status-stale {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.status-refusal {
+  background: var(--amber-subtle);
+  border: 1px solid var(--amber-border);
+  color: #fbbf24;
+}
+
+.status-pass {
+  background: var(--emerald-subtle);
+  border: 1px solid var(--emerald-border);
+  color: #34d399;
+}
+
+.table-link {
+  color: var(--primary-blue-light);
+  text-decoration: none;
+}
+.table-link:hover {
+  text-decoration: underline;
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* Refusal Stats List */
+.refusal-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.refusal-stat-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.refusal-stat-item:hover {
+  border-color: var(--border-medium);
+}
+
+.refusal-stat-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.refusal-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.refusal-desc {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.refusal-stat-count {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: #fbbf24;
+  background: var(--amber-subtle);
+  padding: 2px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--amber-border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .dash-row {
+    flex-direction: column;
+  }
+  .dash-header {
+    padding: 0 16px;
+  }
+  .dash-content {
+    padding: 20px 16px;
+  }
+}

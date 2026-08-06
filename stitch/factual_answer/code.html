@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Librarian Assistant - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#291800",
+                        "on-surface-variant": "#404849",
+                        "on-tertiary-fixed": "#3c0800",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d8e4ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#deeaef",
+                        "surface-container": "#e4f0f5",
+                        "primary": "#003739",
+                        "on-background": "#121d21",
+                        "surface-variant": "#d8e4ea",
+                        "secondary-fixed-dim": "#fdba55",
+                        "primary-fixed-dim": "#97d1d4",
+                        "surface-tint": "#2c676a",
+                        "secondary": "#815500",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f2fbff",
+                        "tertiary": "#5e1705",
+                        "primary-fixed": "#b2edf0",
+                        "tertiary-container": "#7d2d19",
+                        "on-tertiary-fixed-variant": "#7c2d18",
+                        "on-secondary-container": "#724a00",
+                        "on-primary-container": "#86bfc2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a2",
+                        "on-surface": "#121d21",
+                        "outline": "#707979",
+                        "on-primary-fixed-variant": "#0b4f52",
+                        "secondary-container": "#fdba55",
+                        "primary-container": "#0b4f52",
+                        "on-secondary-fixed-variant": "#624000",
+                        "secondary-fixed": "#ffddb2",
+                        "inverse-primary": "#97d1d4",
+                        "outline-variant": "#bfc8c8",
+                        "surface-bright": "#f2fbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d0dce1",
+                        "surface-container-low": "#eaf6fb",
+                        "background": "#f2fbff",
+                        "inverse-surface": "#273236",
+                        "inverse-on-surface": "#e7f3f8",
+                        "tertiary-fixed": "#ffdad2",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002021",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ff9c82",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "container-max": "800px",
+                        "xs": "4px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "data-mono": ["IBM Plex Mono"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "data-mono": ["13px", { "lineHeight": "1.5", "fontWeight": "450" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #bfc8c8; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-sans antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-on-surface-variant flex justify-between items-center w-full px-md md:px-lg max-w-container-max mx-auto h-16 fixed top-0 left-0 right-0 z-50">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Librarian Assistant</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button aria-label="history" class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button aria-label="settings" class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-grow pt-[80px] pb-[140px] px-md flex flex-col items-center overflow-y-auto">
+<div class="w-full max-w-[720px] flex flex-col gap-lg">
+<!-- User Message -->
+<div class="flex justify-end w-full">
+<div class="bg-surface-container-highest text-on-surface px-lg py-md rounded-xl max-w-[85%] sm:max-w-[75%] border border-outline-variant/30">
+<p class="font-body-lg text-body-lg">What's the exit load on HDFC Small Cap Fund?</p>
+</div>
+</div>
+<!-- Assistant Factual Answer -->
+<div class="flex justify-start w-full">
+<div class="bg-surface-container-lowest border border-outline-variant border-l-[3px] border-l-primary-container rounded-xl p-lg w-full">
+<!-- Answer Content -->
+<div class="text-on-surface font-body-lg text-body-lg flex flex-col gap-md">
+<p>The exit load for the HDFC Small Cap Fund is currently set at 1.00% if units are redeemed or switched out within 1 year from the date of allotment.</p>
+<p>No exit load is levied if the redemption or switch-out occurs after the completion of 1 year. This policy is designed to discourage short-term trading and protect long-term investors.</p>
+</div>
+<!-- Citations area -->
+<div class="mt-md pt-sm flex flex-wrap items-center gap-sm">
+<a class="inline-flex items-center gap-1.5 bg-secondary-fixed hover:bg-secondary-fixed-dim transition-colors px-sm py-1 rounded text-on-secondary-fixed-variant font-label-sm text-label-sm border border-secondary-fixed-dim/30 group" href="#">
+<span class="material-symbols-outlined text-[14px] opacity-80 group-hover:opacity-100" data-icon="link">link</span>
+                            HDFC Small Cap Fund — Groww
+                        </a>
+</div>
+<!-- Footer Info -->
+<div class="mt-lg pt-md border-t border-outline-variant/50">
+<p class="font-data-mono text-data-mono text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span>
+                            Last updated from sources: 4 Aug 2026
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Persistent Input Area -->
+<div class="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-outline-variant/50 px-md py-4 z-40 flex flex-col items-center">
+<div class="w-full max-w-[720px] flex flex-col gap-sm">
+<div class="relative w-full">
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg pl-md pr-[50px] py-[12px] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors shadow-sm" placeholder="Ask a follow-up question..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary-container bg-surface-container hover:bg-primary hover:text-on-primary transition-colors p-1.5 rounded flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-outline text-center">
+                Facts-only. No investment advice. Librarian Assistant may produce inaccuracies.
+            </p>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Librarian Assistant - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#291800",
+                        "on-surface-variant": "#404849",
+                        "on-tertiary-fixed": "#3c0800",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d8e4ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#deeaef",
+                        "surface-container": "#e4f0f5",
+                        "primary": "#003739",
+                        "on-background": "#121d21",
+                        "surface-variant": "#d8e4ea",
+                        "secondary-fixed-dim": "#fdba55",
+                        "primary-fixed-dim": "#97d1d4",
+                        "surface-tint": "#2c676a",
+                        "secondary": "#815500",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f2fbff",
+                        "tertiary": "#5e1705",
+                        "primary-fixed": "#b2edf0",
+                        "tertiary-container": "#7d2d19",
+                        "on-tertiary-fixed-variant": "#7c2d18",
+                        "on-secondary-container": "#724a00",
+                        "on-primary-container": "#86bfc2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a2",
+                        "on-surface": "#121d21",
+                        "outline": "#707979",
+                        "on-primary-fixed-variant": "#0b4f52",
+                        "secondary-container": "#fdba55",
+                        "primary-container": "#0b4f52",
+                        "on-secondary-fixed-variant": "#624000",
+                        "secondary-fixed": "#ffddb2",
+                        "inverse-primary": "#97d1d4",
+                        "outline-variant": "#bfc8c8",
+                        "surface-bright": "#f2fbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d0dce1",
+                        "surface-container-low": "#eaf6fb",
+                        "background": "#f2fbff",
+                        "inverse-surface": "#273236",
+                        "inverse-on-surface": "#e7f3f8",
+                        "tertiary-fixed": "#ffdad2",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002021",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ff9c82",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "container-max": "800px",
+                        "xs": "4px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "data-mono": ["IBM Plex Mono"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "data-mono": ["13px", { "lineHeight": "1.5", "fontWeight": "450" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-md md:px-lg max-w-container-max mx-auto h-16 sticky top-0 z-40">
+<div class="text-headline-sm font-headline-sm font-bold text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+            Librarian Assistant
+        </div>
+<div class="flex gap-md items-center">
+<button aria-label="history" class="text-on-surface-variant hover:bg-surface-container-low p-sm rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button aria-label="settings" class="text-on-surface-variant hover:bg-surface-container-low p-sm rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden ml-xs">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A small, professional avatar placeholder image, subtle light mode aesthetic, clean grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUCgQICLoq2l4nq4LJpO5utMuNM7BAUZXTIMTSAHqfCpZHDVkOgKnR-px4sfzxbbbB2Q9uyrL1_mRqfBs-nbFvaP-KGlQqQMHso-MFxTH4f_oSHxqmPpfX704yMiYjB7A17XSjyTmTPgqnb_pLNjoxu6XTR2VTfUUiEquyecoDMC5oT-RqGJnto1gAnaJqIc-ZCbtrevisFtSQdmEdTtI7gpKvw0rYskzbXF85FgF7-KRAbPEgma1TKA"/>
+</div>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-md md:px-lg py-lg flex flex-col gap-xl overflow-y-auto pb-[140px]">
+<!-- User Message -->
+<div class="flex flex-col gap-xs items-end w-full">
+<div class="text-label-sm font-label-sm text-on-surface-variant px-sm">You</div>
+<div class="bg-surface-container border border-outline-variant px-md py-md rounded-lg rounded-tr-none text-body-md font-body-md text-on-surface max-w-[85%] md:max-w-[75%] shadow-sm">
+                What's the expense ratio for SBI Bluechip Fund?
+            </div>
+</div>
+<!-- Assistant Message: Out of Coverage State -->
+<div class="flex flex-col gap-xs items-start w-full">
+<div class="text-label-sm font-label-sm text-on-surface-variant px-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+                Assistant
+            </div>
+<!-- Assistant Card - White bg, slate gray left border -->
+<div class="bg-surface-container-lowest border border-outline-variant border-l-[3px] border-l-outline px-md md:px-lg py-md rounded-lg rounded-tl-none text-body-md font-body-md text-on-surface max-w-[95%] md:max-w-[85%] shadow-sm hover:shadow-md transition-shadow duration-300">
+<p class="mb-md leading-relaxed">
+                    That scheme isn't in my current coverage. I can only answer questions about these 5 schemes:
+                </p>
+<!-- Vertical list of 5 scheme chips -->
+<div class="flex flex-col gap-sm items-start">
+<button class="px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface text-label-sm font-label-sm inline-flex items-center gap-sm cursor-pointer hover:bg-surface-container-low hover:border-primary-fixed-dim hover:text-primary transition-all text-left">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+                        HDFC Flexi Cap Fund
+                    </button>
+<button class="px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface text-label-sm font-label-sm inline-flex items-center gap-sm cursor-pointer hover:bg-surface-container-low hover:border-primary-fixed-dim hover:text-primary transition-all text-left">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+                        HDFC Top 100 Fund
+                    </button>
+<button class="px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface text-label-sm font-label-sm inline-flex items-center gap-sm cursor-pointer hover:bg-surface-container-low hover:border-primary-fixed-dim hover:text-primary transition-all text-left">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+                        HDFC Mid-Cap Opportunities Fund
+                    </button>
+<button class="px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface text-label-sm font-label-sm inline-flex items-center gap-sm cursor-pointer hover:bg-surface-container-low hover:border-primary-fixed-dim hover:text-primary transition-all text-left">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+                        HDFC Small Cap Fund
+                    </button>
+<button class="px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface text-label-sm font-label-sm inline-flex items-center gap-sm cursor-pointer hover:bg-surface-container-low hover:border-primary-fixed-dim hover:text-primary transition-all text-left">
+<span class="material-symbols-outlined text-[16px] text-outline">description</span>
+                        HDFC Balanced Advantage Fund
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Area: Chat Input & Disclaimer -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant z-50 pt-md pb-safe">
+<div class="max-w-container-max mx-auto px-md md:px-lg flex flex-col gap-sm pb-md">
+<!-- Chat Input -->
+<div class="relative flex items-center group">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 pl-md pr-xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm group-hover:shadow-md" placeholder="Ask another question about covered schemes..." type="text"/>
+<button aria-label="Send message" class="absolute right-xs mr-xs p-2 bg-primary text-on-primary rounded flex items-center justify-center hover:bg-on-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Footer Disclaimer -->
+<div class="w-full flex justify-center items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant text-center opacity-80">
+                    Facts-only. No investment advice.
+                </span>
+</div>
+</div>
+</div>
+</body></html>
