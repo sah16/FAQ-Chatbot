@@ -43,7 +43,7 @@ def test_e2e_qa_all_five_schemes():
         ("What is the minimum SIP for HDFC Flexi Cap?", "100", "hdfc-equity-fund-direct-growth"),
 
         # Scheme 3: HDFC Small Cap
-        ("What is the riskometer classification for HDFC Small Cap Fund?", "Moderately High", "hdfc-small-cap-fund-direct-growth"),
+        ("What is the riskometer classification for HDFC Small Cap Fund?", "Very High", "hdfc-small-cap-fund-direct-growth"),
         ("What is the exit load on HDFC Small Cap?", "1%", "hdfc-small-cap-fund-direct-growth"),
 
         # Scheme 4: HDFC Nifty 50 Index

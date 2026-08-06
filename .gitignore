@@ -41,7 +41,8 @@ htmlcov/
 .nox/
 
 # Vector Stores & Local Cache
-data/
+data/*
+!data/vector_store.json
 chroma_db/
 *.sqlite
 *.sqlite3

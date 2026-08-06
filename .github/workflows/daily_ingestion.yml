@@ -30,6 +30,7 @@ jobs:
 
       - name: Run Ingestion Scheduler
         env:
+          PYTHONPATH: .
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
           python -m ingestion.scheduler
@@ -43,5 +44,6 @@ jobs:
             echo "No changes detected in vector store. Working tree clean."
           else
             git commit -m "chore(data): automated daily vector store freshness update [skip ci]"
-            git push
+            git pull --rebase origin master || true
+            git push origin master
           fi

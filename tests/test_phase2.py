@@ -148,9 +148,11 @@ def test_vector_store_persistence_and_search(tmp_path):
     assert filtered_results[0][0].scheme_name == "HDFC Small Cap Fund"
 
 
-def test_ingestion_idempotency():
+def test_ingestion_idempotency(tmp_path):
     """Verify that re-running ingestion updates existing records rather than duplicating them."""
-    pipeline = IngestionPipeline()
+    temp_store = tmp_path / "idempotent_store.json"
+    store = VectorStore(storage_path=temp_store)
+    pipeline = IngestionPipeline(vector_store=store)
     result1 = pipeline.run_ingestion()
     assert result1["status"] == "success"
     assert result1["total_chunks"] == 45
