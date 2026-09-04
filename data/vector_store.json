@@ -11,7 +11,7 @@
       "embedding": [],
       "fetched_at": "2026-08-25",
       "content_hash": "sha256:00b6870fe83b59d41773c5818815cc11d54dd2db1612b18650c0c135305a6806",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-exit_load-002",
@@ -907,7 +907,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:f2502ec66ecb17fa6155d3b50999cd34b2b5ea84bcf027cc51ca2e5e9e9764e4",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-minimum_investment-003",
@@ -1803,7 +1803,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:751b2fa6da82fa978ec542866c75fdc65d90b8d9196b91aa28f3d13d376627f1",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-lock_in_period-004",
@@ -2699,7 +2699,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:95919e3716069b06f7ab14e76a001c18e7bfbe55128856efc743218f0f691c7b",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-riskometer-005",
@@ -3595,7 +3595,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:efaa959ee2d2b0faf0cb5e44ab2486f6ee4b91bb4468fb49e3e0d538d8ac1d47",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-benchmark_index-006",
@@ -4491,7 +4491,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:192fa87128f0460903cf2993afadb461e921dd31453aa7022beb6fcfefd6fd52",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-fund_management-007",
@@ -5387,7 +5387,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:aace411975f6c96fafe15e37e7c9cd78a2acf114b44928116efdc233895a7a98",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-statement_download_process-008",
@@ -6283,18 +6283,18 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:1be71398d15b0180f8f083556c5704b0c5d87cf7e9397ff12c5d1b96fc24c542",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-fund_overview-009",
       "scheme_name": "HDFC Mid-Cap Opportunities Fund",
       "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
       "section_label": "fund_overview",
-      "text": "[Fund Overview & Scheme Details] HDFC Mid Cap Fund Direct Growth is an open-ended Equity - Mid Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9105,142.69 Cr. The latest recorded NAV is \u20b9235.185. The fund operates under the Direct Plan - Growth option with direct investment execution.",
+      "text": "[Fund Overview & Scheme Details] HDFC Mid Cap Fund Direct Growth is an open-ended Equity - Mid Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9105,142.69 Cr. The latest recorded NAV is \u20b9235.494. The fund operates under the Direct Plan - Growth option with direct investment execution.",
       "embedding": [],
-      "fetched_at": "2026-09-03",
-      "content_hash": "sha256:bf7b4b9d61af8d6649b8d41aef5983b3910a754f6b30fa0fbcb103fd59c4831e",
-      "last_verified_unchanged_at": "2026-09-03"
+      "fetched_at": "2026-09-04",
+      "content_hash": "sha256:8e921dbdb9bf11a13f82e1704977214110e9d4ef2e36655b192bf6be2b57a6bf",
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-expense_ratio-001",
@@ -6305,7 +6305,7 @@
       "embedding": [],
       "fetched_at": "2026-08-20",
       "content_hash": "sha256:e836e44447d0279c27d7b7a75ac74d596ac905c6f03c0793568e77bd1b833625",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-exit_load-002",
@@ -7201,7 +7201,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:931e6c44e41741b5863e25620da89df3dac1b2b64598b2e6adfb538dc1ccf12b",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-minimum_investment-003",
@@ -8097,7 +8097,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:78a1676c0b3a7c62a5cb133ba41a2bbcdb937a63473a8e7028242dd31e6b5a35",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-lock_in_period-004",
@@ -8993,7 +8993,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:8726757d68b8e08f29ac1909d393e3351438b13919b2859ce4625749401ea0c4",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-riskometer-005",
@@ -9889,7 +9889,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:b486444aae4a8707e0e39aded99edeaadd8a8fea244f8cd60cf0e395ebfbc6a5",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-benchmark_index-006",
@@ -10785,7 +10785,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:caf285a0455df5c332d940530fe5f1c1c2daf1089ee0a65605fddfbe8ec72b6d",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-fund_management-007",
@@ -11681,7 +11681,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:486c8fdafc5090cb4dcd57e2c3fdd3e851317fe0d86cf8d8eee105a681ec38fb",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-statement_download_process-008",
@@ -12577,18 +12577,18 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:d0802c521703d2916fbf9fbdfaddc62165e024c83374dbc5d4dd591cbb1553e1",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-equity-fund-fund_overview-009",
       "scheme_name": "HDFC Flexi Cap Fund (formerly HDFC Equity Fund)",
       "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
       "section_label": "fund_overview",
-      "text": "[Fund Overview & Scheme Details] HDFC Flexi Cap Direct Plan Growth is an open-ended Equity - Flexi Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9110,736.41 Cr. The latest recorded NAV is \u20b92271.077. The fund operates under the Direct Plan - Growth option with direct investment execution.",
+      "text": "[Fund Overview & Scheme Details] HDFC Flexi Cap Direct Plan Growth is an open-ended Equity - Flexi Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9110,736.41 Cr. The latest recorded NAV is \u20b92273.755. The fund operates under the Direct Plan - Growth option with direct investment execution.",
       "embedding": [],
-      "fetched_at": "2026-09-03",
-      "content_hash": "sha256:234b542feb997ef0242e088b1c58dcc051b63d9d8aaf05ef5dba01af047e760e",
-      "last_verified_unchanged_at": "2026-09-03"
+      "fetched_at": "2026-09-04",
+      "content_hash": "sha256:4ad4f836f456da119309c38ee70a2e53fcc77cb04f98e598ef0d635773c6369d",
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-expense_ratio-001",
@@ -12599,7 +12599,7 @@
       "embedding": [],
       "fetched_at": "2026-08-14",
       "content_hash": "sha256:1c3a17f03ee2ef5cf4ae6f656155f3f09de4e95f424b641b1eb01559fa403aa0",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-exit_load-002",
@@ -13495,7 +13495,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:7a2c4232d667586c1cc1aba0f5e44aa130defd7383424e47246bd1d26d3bfef7",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-minimum_investment-003",
@@ -14391,7 +14391,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:61f8472a46060e799a9abffe7c765434c016b4891e254d0bc7a0c2e49e73bfcd",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-lock_in_period-004",
@@ -15287,7 +15287,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:79e718a3273954d529b97b65fc4d8009c96de27c48b3b43e8b60591702acab9e",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-riskometer-005",
@@ -16183,7 +16183,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:5572692cfb1b4388be109ec5494dc92fddf2d22a07fda01fbc0c5b56a153c476",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-benchmark_index-006",
@@ -17079,7 +17079,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:0f4630addda1093d2e25e0251a69fd00dfa98d395f1e853d7e233ed890a2b14a",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-fund_management-007",
@@ -17975,7 +17975,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:8c2c455ee79dcd6fb367bfec4668573f9642ca22bc7f2e175a95bd3f23da8c4c",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-statement_download_process-008",
@@ -18871,18 +18871,18 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:dcbdd9ffcf0c24c4c56f6ed569b460d35a8c5c0709a5a31de577e8decf373164",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-small-cap-fund-fund_overview-009",
       "scheme_name": "HDFC Small Cap Fund",
       "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
       "section_label": "fund_overview",
-      "text": "[Fund Overview & Scheme Details] HDFC Small Cap Fund Direct Growth is an open-ended Equity - Small Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b941,679.00 Cr. The latest recorded NAV is \u20b9160.418. The fund operates under the Direct Plan - Growth option with direct investment execution.",
+      "text": "[Fund Overview & Scheme Details] HDFC Small Cap Fund Direct Growth is an open-ended Equity - Small Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b941,679.00 Cr. The latest recorded NAV is \u20b9160.9. The fund operates under the Direct Plan - Growth option with direct investment execution.",
       "embedding": [],
-      "fetched_at": "2026-09-03",
-      "content_hash": "sha256:4f4ee77c626e9ed8bce4dea21969f9bd5959a32fab7b66823f58b13e78efe274",
-      "last_verified_unchanged_at": "2026-09-03"
+      "fetched_at": "2026-09-04",
+      "content_hash": "sha256:7de599799f3c075db6d3c955c1fb7c626530ddf27cd47d9c8ffdb4f32de38462",
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-expense_ratio-001",
@@ -18893,7 +18893,7 @@
       "embedding": [],
       "fetched_at": "2026-08-14",
       "content_hash": "sha256:4e3e0247c5014217e9b8f4ec4136a081d2b78da9a488730525bef05755adcf79",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-exit_load-002",
@@ -19789,7 +19789,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:f4adf3d23dea4a2f046d2b825bfbfe3b1ddbb5ca3f9935906fd22096cd1467b3",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-minimum_investment-003",
@@ -20685,7 +20685,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:25549169fbc782e502c623a3a0c0d8b56feb8f47985e1f2caa02864e6c469308",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-lock_in_period-004",
@@ -21581,7 +21581,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:84bff7bbdcb796f4e699309e1daa66903e419bded76ae3062d9737c0ddde0e7f",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-riskometer-005",
@@ -22477,7 +22477,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:09216e0d6aeac7491ac61fa36ab93bce6bc4f068bc44bc0f164980fb9166b439",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-benchmark_index-006",
@@ -23373,7 +23373,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:3f9ec2ba8e27af79f20f803883724b115502011793b2ed87805b767f72cbfcf3",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-fund_management-007",
@@ -24269,7 +24269,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:9d134b8d0816ab5f632d54d7a67b7cef595551f8c69fc6527b8153a48ac09fee",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-statement_download_process-008",
@@ -25165,18 +25165,18 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:01eaff8c55a5a09f1ce232a8b89127d827a79d4da04801a600ca89be295c5096",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-nifty-50-index-fund-fund_overview-009",
       "scheme_name": "HDFC Nifty 50 Index Fund",
       "source_url": "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth",
       "section_label": "fund_overview",
-      "text": "[Fund Overview & Scheme Details] HDFC NIFTY 50 Index Fund Direct Growth is an open-ended Equity - Large Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b924,189.60 Cr. The latest recorded NAV is \u20b9234.0789. The fund operates under the Direct Plan - Growth option with direct investment execution.",
+      "text": "[Fund Overview & Scheme Details] HDFC NIFTY 50 Index Fund Direct Growth is an open-ended Equity - Large Cap scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b924,189.60 Cr. The latest recorded NAV is \u20b9233.676. The fund operates under the Direct Plan - Growth option with direct investment execution.",
       "embedding": [],
-      "fetched_at": "2026-09-03",
-      "content_hash": "sha256:11d67081b9557a5477ebbe224ec82829ac9c84d86628513070d1aa00696fcc49",
-      "last_verified_unchanged_at": "2026-09-03"
+      "fetched_at": "2026-09-04",
+      "content_hash": "sha256:dea60e16d638595d32fe17a31d4d45e82fdd4dd96d1ba56f99cd639f3d5b43c2",
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-expense_ratio-001",
@@ -25187,7 +25187,7 @@
       "embedding": [],
       "fetched_at": "2026-08-29",
       "content_hash": "sha256:baab8851870741467c6f4ab3b521b448d763582f00352f3f239d3ab94d1c7eab",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-exit_load-002",
@@ -26083,7 +26083,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:a54088314ef1d5ea21cc1d483e50f82bf50678204eb579dde1d635e726be2c50",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-minimum_investment-003",
@@ -26979,7 +26979,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:9aa0da64f7510fd1b35bd5722bc346cff66723b973e274467208d39d79217f19",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-lock_in_period-004",
@@ -27875,7 +27875,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:5b69cab20083d4756847fa79a7a031f37f90778177d01d896db527f7e1a62e75",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-riskometer-005",
@@ -28771,7 +28771,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:28af07026065dc69f9a2e68140ed4a4ed7bf8d0f5ac67b162f967bf40d52aa5d",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-benchmark_index-006",
@@ -29667,7 +29667,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:645e7688263c4eb518f719467ef8586614998740a65ddaa50f7c985dffcfaf43",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-fund_management-007",
@@ -30563,7 +30563,7 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:ae895951ce5dfb91c8235c6be75e653210a88a26f5091da93ba7f7c91b9528ae",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-statement_download_process-008",
@@ -31459,18 +31459,18 @@
       ],
       "fetched_at": "2026-08-06",
       "content_hash": "sha256:db941a635b7be933a5c0b42bec884fe5b242a94089bb22fab756dea8ffc26c03",
-      "last_verified_unchanged_at": "2026-09-03"
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-balanced-advantage-fund-fund_overview-009",
       "scheme_name": "HDFC Balanced Advantage Fund",
       "source_url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
       "section_label": "fund_overview",
-      "text": "[Fund Overview & Scheme Details] HDFC Balanced Advantage Fund Direct Growth is an open-ended Hybrid - Dynamic Asset Allocation scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9107,765.65 Cr. The latest recorded NAV is \u20b9568.286. The fund operates under the Direct Plan - Growth option with direct investment execution.",
+      "text": "[Fund Overview & Scheme Details] HDFC Balanced Advantage Fund Direct Growth is an open-ended Hybrid - Dynamic Asset Allocation scheme managed by HDFC Mutual Fund. Total Fund AUM is \u20b9107,765.65 Cr. The latest recorded NAV is \u20b9568.783. The fund operates under the Direct Plan - Growth option with direct investment execution.",
       "embedding": [],
-      "fetched_at": "2026-09-03",
-      "content_hash": "sha256:99d8092c490e6ccdcd73bfc9ed983be88bc2cde0b3df47585721a55bb455e7be",
-      "last_verified_unchanged_at": "2026-09-03"
+      "fetched_at": "2026-09-04",
+      "content_hash": "sha256:06a28cf68e585e66900cb22f5057fac86fe55005fd995c7a44c4a1c19a15e84b",
+      "last_verified_unchanged_at": "2026-09-04"
     },
     {
       "chunk_id": "hdfc-mid-cap-fund-minimum_investment-002",
